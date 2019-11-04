@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC0947DA-11D9-4F06-BF96-8696A7E6742F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CapaNegocios</RootNamespace>
+    <AssemblyName>CapaNegocios</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="NAnticipo.cs" />
+    <Compile Include="NCliente.cs" />
+    <Compile Include="NDetalle.cs" />
+    <Compile Include="NDistribucion.cs" />
+    <Compile Include="NEstado.cs" />
+    <Compile Include="NEstado_Cuota.cs" />
+    <Compile Include="NFactura.cs" />
+    <Compile Include="NHistorial_Estado.cs" />
+    <Compile Include="NInsumo.cs" />
+    <Compile Include="NListado_Productos.cs" />
+    <Compile Include="NLocalidad.cs" />
+    <Compile Include="NMarca.cs" />
+    <Compile Include="NMateria_Prima.cs" />
+    <Compile Include="NPagos.cs" />
+    <Compile Include="NPedido_Insumo.cs" />
+    <Compile Include="NPedido_Presupuesto.cs" />
+    <Compile Include="NPedido_Producto.cs" />
+    <Compile Include="NPedido_Trabajo.cs" />
+    <Compile Include="NPresupuesto.cs" />
+    <Compile Include="NPresupuesto_Insumo.cs" />
+    <Compile Include="NProduccion.cs" />
+    <Compile Include="NProducto.cs" />
+    <Compile Include="NProveedor.cs" />
+    <Compile Include="NProvincia.cs" />
+    <Compile Include="NRecibo.cs" />
+    <Compile Include="NSexo.cs" />
+    <Compile Include="NSobrantes.cs" />
+    <Compile Include="NTaller.cs" />
+    <Compile Include="NTipo_Cliente.cs" />
+    <Compile Include="NTipo_Factura.cs" />
+    <Compile Include="NTipo_Pago.cs" />
+    <Compile Include="NUnidad_Medida.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{18d579bd-247b-413e-b8d0-9f3db7369376}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
