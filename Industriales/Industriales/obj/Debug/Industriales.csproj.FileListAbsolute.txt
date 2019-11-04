@@ -63,3 +63,15 @@ D:\GITHUB_2019\Industriales211019\IndustrialesSPPS\Industriales\Industriales\bin
 D:\GITHUB_2019\Industriales211019\IndustrialesSPPS\Industriales\Industriales\bin\Debug\CapaDatos.pdb
 D:\GITHUB_2019\Industriales211019\IndustrialesSPPS\Industriales\Industriales\bin\Debug\CapaNegocios.pdb
 D:\GITHUB_2019\Industriales211019\IndustrialesSPPS\Industriales\Industriales\obj\Debug\Industriales.csprojResolveAssemblyReference.cache
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\Industriales\bin\Debug\Industriales.exe.config
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\Industriales\obj\Debug\Industriales.exe
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\Industriales\obj\Debug\Industriales.pdb
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\Industriales\bin\Debug\Industriales.exe
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\Industriales\bin\Debug\Industriales.pdb
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\Industriales\bin\Debug\CapaPresentacion.dll
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\Industriales\bin\Debug\CapaDatos.dll
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\Industriales\bin\Debug\CapaNegocios.dll
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\Industriales\bin\Debug\CapaPresentacion.pdb
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\Industriales\bin\Debug\CapaDatos.pdb
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\Industriales\bin\Debug\CapaNegocios.pdb
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\Industriales\obj\Debug\Industriales.csprojResolveAssemblyReference.cache
