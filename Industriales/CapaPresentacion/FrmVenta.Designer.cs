@@ -71,6 +71,8 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblSubTotal = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataCliente)).BeginInit();
@@ -258,6 +260,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lblTotal);
+            this.panel2.Controls.Add(this.lblSubTotal);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.btnProductoNuevo);
             this.panel2.Controls.Add(this.dataListadoProductos);
@@ -313,7 +317,7 @@
             this.dataListadoProductos.GridColor = System.Drawing.Color.DimGray;
             this.dataListadoProductos.Location = new System.Drawing.Point(43, 29);
             this.dataListadoProductos.Name = "dataListadoProductos";
-            this.dataListadoProductos.Size = new System.Drawing.Size(1136, 112);
+            this.dataListadoProductos.Size = new System.Drawing.Size(962, 112);
             this.dataListadoProductos.TabIndex = 3;
             // 
             // dataVentas
@@ -332,7 +336,7 @@
             this.dataVentas.GridColor = System.Drawing.Color.DimGray;
             this.dataVentas.Location = new System.Drawing.Point(43, 175);
             this.dataVentas.Name = "dataVentas";
-            this.dataVentas.Size = new System.Drawing.Size(1136, 294);
+            this.dataVentas.Size = new System.Drawing.Size(962, 294);
             this.dataVentas.TabIndex = 39;
             // 
             // button2
@@ -516,7 +520,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "D  E  S  C  R  I  P  C  I  Ó  N";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 800;
+            this.dataGridViewTextBoxColumn2.Width = 625;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -534,7 +538,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "IMPORTE";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 110;
+            this.dataGridViewTextBoxColumn4.Width = 115;
             // 
             // Column5
             // 
@@ -550,6 +554,26 @@
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             this.Column6.Visible = false;
+            // 
+            // lblSubTotal
+            // 
+            this.lblSubTotal.AutoSize = true;
+            this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTotal.Location = new System.Drawing.Point(1022, 248);
+            this.lblSubTotal.Name = "lblSubTotal";
+            this.lblSubTotal.Size = new System.Drawing.Size(85, 18);
+            this.lblSubTotal.TabIndex = 43;
+            this.lblSubTotal.Text = "Sub Total:";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(1022, 277);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(51, 18);
+            this.lblTotal.TabIndex = 44;
+            this.lblTotal.Text = "Total:";
             // 
             // FrmVenta
             // 
@@ -623,5 +647,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Label lblSubTotal;
+        private System.Windows.Forms.Label lblTotal;
     }
 }

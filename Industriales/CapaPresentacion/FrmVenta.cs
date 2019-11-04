@@ -238,8 +238,9 @@ namespace CapaPresentacion
                 dataVentas.Rows[i].Cells[3].Value = lst[i].Precio_producto;
                 Subtotal = Convert.ToDecimal(dataVentas.Rows[i].Cells[3].Value = lst[i].Precio_producto) * Convert.ToInt32(lst[i].Cantidad_producto);
                 dataVentas.Rows[i].Cells[4].Value = Subtotal;
-                
-                
+                this.lblSubTotal.Text = "Subtotal: " + "$"+ Convert.ToString(Subtotal);
+
+
                 //dataVentas1.Rows.Add();
                 //MessageBox.Show("el indice es:" + i);
                 //MessageBox.Show("La cantidad de elementos de la lista:" + contador);
@@ -263,6 +264,7 @@ namespace CapaPresentacion
             SumaTotal += SumaSubTotal;
             dataVentas.Rows[lst.Count + 1].Cells[4].Value = SumaTotal;
             dataVentas.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
+            this.lblTotal.Text = "Total:" + "$" + Convert.ToString(SumaTotal);
             //dataVentas.Rows[lst.Count + 3].Cells[4].Value = "SumaTotal";
             dataVentas.ClearSelection();
 
