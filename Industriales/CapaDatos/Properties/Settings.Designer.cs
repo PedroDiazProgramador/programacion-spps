@@ -26,7 +26,8 @@ namespace CapaDatos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=VISITA02-PC;Initial Catalog=dbIndustriales;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=VISITA02-PC;Initial Catalog=dbIndustriales;Persist Security Info=True" +
+            ";User ID=PedroDiaz;Password=123456")]
         public string cn {
             get {
                 return ((string)(this["cn"]));

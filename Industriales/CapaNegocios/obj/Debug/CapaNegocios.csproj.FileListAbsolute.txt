@@ -33,10 +33,10 @@ D:\GITHUB_2019\Industriales211019\IndustrialesSPPS\Industriales\CapaNegocios\bin
 D:\GITHUB_2019\Industriales211019\IndustrialesSPPS\Industriales\CapaNegocios\obj\Debug\CapaNegocios.csprojResolveAssemblyReference.cache
 D:\GITHUB_2019\Industriales211019\IndustrialesSPPS\Industriales\CapaNegocios\obj\Debug\CapaNegocios.dll
 D:\GITHUB_2019\Industriales211019\IndustrialesSPPS\Industriales\CapaNegocios\obj\Debug\CapaNegocios.pdb
-D:\GITHUB_2019\programacion-spps\Industriales\CapaNegocios\bin\Debug\CapaNegocios.dll
-D:\GITHUB_2019\programacion-spps\Industriales\CapaNegocios\bin\Debug\CapaNegocios.pdb
-D:\GITHUB_2019\programacion-spps\Industriales\CapaNegocios\bin\Debug\CapaDatos.dll
-D:\GITHUB_2019\programacion-spps\Industriales\CapaNegocios\bin\Debug\CapaDatos.pdb
-D:\GITHUB_2019\programacion-spps\Industriales\CapaNegocios\obj\Debug\CapaNegocios.csprojResolveAssemblyReference.cache
-D:\GITHUB_2019\programacion-spps\Industriales\CapaNegocios\obj\Debug\CapaNegocios.dll
-D:\GITHUB_2019\programacion-spps\Industriales\CapaNegocios\obj\Debug\CapaNegocios.pdb
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\CapaNegocios\bin\Debug\CapaNegocios.dll
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\CapaNegocios\bin\Debug\CapaNegocios.pdb
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\CapaNegocios\bin\Debug\CapaDatos.dll
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\CapaNegocios\bin\Debug\CapaDatos.pdb
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\CapaNegocios\obj\Debug\CapaNegocios.csprojResolveAssemblyReference.cache
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\CapaNegocios\obj\Debug\CapaNegocios.dll
+D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\CapaNegocios\obj\Debug\CapaNegocios.pdb
