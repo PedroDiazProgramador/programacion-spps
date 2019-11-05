@@ -86,3 +86,17 @@ D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\CapaPresentacion\ob
 D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.Cache
 D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\CapaPresentacion\obj\Debug\CapaPresentacion.dll
 D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\bin\Debug\CapaPresentacion.dll
+D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
+D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\bin\Debug\CapaDatos.dll
+D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\bin\Debug\CapaNegocios.dll
+D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\bin\Debug\CapaDatos.pdb
+D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\bin\Debug\CapaNegocios.pdb
+D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\obj\Debug\CapaPresentacion.csprojResolveAssemblyReference.cache
+D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\obj\Debug\CapaPresentacion.FrmCliente.resources
+D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\obj\Debug\CapaPresentacion.FrmVenta.resources
+D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\obj\Debug\CapaPresentacion.FrmProducto.resources
+D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
+D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.Cache
+D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\obj\Debug\CapaPresentacion.dll
+D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\obj\Debug\CapaPresentacion.pdb

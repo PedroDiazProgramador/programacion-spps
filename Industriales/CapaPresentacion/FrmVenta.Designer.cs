@@ -47,10 +47,19 @@
             this.lblNumeroFactura = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblSubTotal = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.btnProductoNuevo = new System.Windows.Forms.Button();
             this.dataListadoProductos = new System.Windows.Forms.DataGridView();
             this.dataVentas = new System.Windows.Forms.DataGridView();
+            this.IdD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,15 +73,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.lblHabilitado = new System.Windows.Forms.Label();
             this.btnBusarCliente = new System.Windows.Forms.Button();
-            this.IdD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblSubTotal = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataCliente)).BeginInit();
@@ -281,6 +281,30 @@
             this.panel2.Size = new System.Drawing.Size(1221, 472);
             this.panel2.TabIndex = 3;
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.BackColor = System.Drawing.Color.Red;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.Color.White;
+            this.lblTotal.Location = new System.Drawing.Point(1022, 277);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(51, 18);
+            this.lblTotal.TabIndex = 44;
+            this.lblTotal.Text = "Total:";
+            // 
+            // lblSubTotal
+            // 
+            this.lblSubTotal.AutoSize = true;
+            this.lblSubTotal.BackColor = System.Drawing.Color.Red;
+            this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTotal.ForeColor = System.Drawing.Color.White;
+            this.lblSubTotal.Location = new System.Drawing.Point(1022, 248);
+            this.lblSubTotal.Name = "lblSubTotal";
+            this.lblSubTotal.Size = new System.Drawing.Size(85, 18);
+            this.lblSubTotal.TabIndex = 43;
+            this.lblSubTotal.Text = "Sub Total:";
+            // 
             // button3
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -338,6 +362,61 @@
             this.dataVentas.Name = "dataVentas";
             this.dataVentas.Size = new System.Drawing.Size(962, 294);
             this.dataVentas.TabIndex = 39;
+            // 
+            // IdD
+            // 
+            this.IdD.HeaderText = "IdV";
+            this.IdD.Name = "IdD";
+            this.IdD.ReadOnly = true;
+            this.IdD.Visible = false;
+            this.IdD.Width = 30;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "CANT.";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "D  E  S  C  R  I  P  C  I  Ó  N";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 625;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn3.HeaderText = "P. UNIT.";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn4.HeaderText = "IMPORTE";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 115;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "IdP";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Visible = false;
+            this.Column5.Width = 30;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "IGV";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
             // 
             // button2
             // 
@@ -499,81 +578,6 @@
             this.btnBusarCliente.Text = "&Buscar";
             this.btnBusarCliente.UseVisualStyleBackColor = false;
             this.btnBusarCliente.Click += new System.EventHandler(this.btnBusarCliente_Click);
-            // 
-            // IdD
-            // 
-            this.IdD.HeaderText = "IdV";
-            this.IdD.Name = "IdD";
-            this.IdD.ReadOnly = true;
-            this.IdD.Visible = false;
-            this.IdD.Width = 30;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "CANT.";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "D  E  S  C  R  I  P  C  I  Ó  N";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 625;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn3.HeaderText = "P. UNIT.";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 110;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn4.HeaderText = "IMPORTE";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 115;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "IdP";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Visible = false;
-            this.Column5.Width = 30;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "IGV";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
-            // 
-            // lblSubTotal
-            // 
-            this.lblSubTotal.AutoSize = true;
-            this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTotal.Location = new System.Drawing.Point(1022, 248);
-            this.lblSubTotal.Name = "lblSubTotal";
-            this.lblSubTotal.Size = new System.Drawing.Size(85, 18);
-            this.lblSubTotal.TabIndex = 43;
-            this.lblSubTotal.Text = "Sub Total:";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(1022, 277);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(51, 18);
-            this.lblTotal.TabIndex = 44;
-            this.lblTotal.Text = "Total:";
             // 
             // FrmVenta
             // 
