@@ -48,7 +48,6 @@
             this.lblTipo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.lblSubTotal = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.btnProductoNuevo = new System.Windows.Forms.Button();
             this.dataListadoProductos = new System.Windows.Forms.DataGridView();
@@ -261,7 +260,6 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.lblTotal);
-            this.panel2.Controls.Add(this.lblSubTotal);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.btnProductoNuevo);
             this.panel2.Controls.Add(this.dataListadoProductos);
@@ -292,18 +290,6 @@
             this.lblTotal.Size = new System.Drawing.Size(51, 18);
             this.lblTotal.TabIndex = 44;
             this.lblTotal.Text = "Total:";
-            // 
-            // lblSubTotal
-            // 
-            this.lblSubTotal.AutoSize = true;
-            this.lblSubTotal.BackColor = System.Drawing.Color.Red;
-            this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTotal.ForeColor = System.Drawing.Color.White;
-            this.lblSubTotal.Location = new System.Drawing.Point(1022, 248);
-            this.lblSubTotal.Name = "lblSubTotal";
-            this.lblSubTotal.Size = new System.Drawing.Size(85, 18);
-            this.lblSubTotal.TabIndex = 43;
-            this.lblSubTotal.Text = "Sub Total:";
             // 
             // button3
             // 
@@ -358,7 +344,7 @@
             this.Column5,
             this.Column6});
             this.dataVentas.GridColor = System.Drawing.Color.DimGray;
-            this.dataVentas.Location = new System.Drawing.Point(43, 175);
+            this.dataVentas.Location = new System.Drawing.Point(43, 180);
             this.dataVentas.Name = "dataVentas";
             this.dataVentas.Size = new System.Drawing.Size(962, 294);
             this.dataVentas.TabIndex = 39;
@@ -651,7 +637,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Label lblSubTotal;
         private System.Windows.Forms.Label lblTotal;
     }
 }

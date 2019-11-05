@@ -238,7 +238,7 @@ namespace CapaPresentacion
                 dataVentas.Rows[i].Cells[3].Value = lst[i].Precio_producto;
                 Subtotal = Convert.ToDecimal(dataVentas.Rows[i].Cells[3].Value = lst[i].Precio_producto) * Convert.ToInt32(lst[i].Cantidad_producto);
                 dataVentas.Rows[i].Cells[4].Value = Subtotal;
-                this.lblSubTotal.Text = "Subtotal: " + "$"+ Convert.ToString(Subtotal);
+                
 
 
                 //dataVentas1.Rows.Add();
