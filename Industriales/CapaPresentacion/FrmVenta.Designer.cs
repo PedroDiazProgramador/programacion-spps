@@ -47,7 +47,12 @@
             this.lblNumeroFactura = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.btnEliminarItem = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnProductoNuevo = new System.Windows.Forms.Button();
             this.dataListadoProductos = new System.Windows.Forms.DataGridView();
@@ -69,14 +74,17 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.lblStock = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblRadioButons = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.lblHabilitado = new System.Windows.Forms.Label();
             this.btnBusarCliente = new System.Windows.Forms.Button();
+            this.txtFechaVencimiento = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataCliente)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataVentas)).BeginInit();
             this.panel3.SuspendLayout();
@@ -106,6 +114,7 @@
             this.rbnCtaCte.Text = "Cta. Cte.";
             this.rbnCtaCte.UseVisualStyleBackColor = true;
             this.rbnCtaCte.CheckedChanged += new System.EventHandler(this.rbnCtaCte_CheckedChanged);
+            this.rbnCtaCte.MouseClick += new System.Windows.Forms.MouseEventHandler(this.rbnCtaCte_MouseClick);
             // 
             // rbnTarjeta
             // 
@@ -241,7 +250,7 @@
             this.lblNumeroFactura.Name = "lblNumeroFactura";
             this.lblNumeroFactura.Size = new System.Drawing.Size(433, 29);
             this.lblNumeroFactura.TabIndex = 7;
-            this.lblNumeroFactura.Text = "111199";
+            this.lblNumeroFactura.Text = "1";
             this.lblNumeroFactura.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTipo
@@ -259,7 +268,10 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.lblTotal);
+            this.panel2.Controls.Add(this.button6);
+            this.panel2.Controls.Add(this.btnEliminarItem);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.btnProductoNuevo);
             this.panel2.Controls.Add(this.dataListadoProductos);
@@ -279,17 +291,82 @@
             this.panel2.Size = new System.Drawing.Size(1221, 472);
             this.panel2.TabIndex = 3;
             // 
+            // button6
+            // 
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Image = global::CapaPresentacion.Properties.Resources.carrito_compras;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(1011, 257);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(168, 31);
+            this.button6.TabIndex = 49;
+            this.button6.Text = "&Iniciar Venta";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // btnEliminarItem
+            // 
+            this.btnEliminarItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarItem.Image = global::CapaPresentacion.Properties.Resources.eliminar_item;
+            this.btnEliminarItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarItem.Location = new System.Drawing.Point(790, 145);
+            this.btnEliminarItem.Name = "btnEliminarItem";
+            this.btnEliminarItem.Size = new System.Drawing.Size(187, 31);
+            this.btnEliminarItem.TabIndex = 48;
+            this.btnEliminarItem.Text = "Eliminar &Item";
+            this.btnEliminarItem.UseVisualStyleBackColor = true;
+            this.btnEliminarItem.Click += new System.EventHandler(this.btnEliminarItem_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.lblTotal);
+            this.panel4.ForeColor = System.Drawing.Color.Red;
+            this.panel4.Location = new System.Drawing.Point(1011, 294);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(168, 28);
+            this.panel4.TabIndex = 47;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Red;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(3, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 18);
+            this.label5.TabIndex = 46;
+            this.label5.Text = "Total: $";
+            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.BackColor = System.Drawing.Color.Red;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(1022, 277);
+            this.lblTotal.Location = new System.Drawing.Point(68, 4);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(51, 18);
             this.lblTotal.TabIndex = 44;
             this.lblTotal.Text = "Total:";
+            this.lblTotal.Visible = false;
+            // 
+            // button5
+            // 
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Image = global::CapaPresentacion.Properties.Resources.cancelar_venta;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(1011, 183);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(168, 31);
+            this.button5.TabIndex = 45;
+            this.button5.Text = "Cancelar&Venta";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -297,22 +374,23 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Image = global::CapaPresentacion.Properties.Resources.confirmar;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(826, 148);
+            this.button3.Location = new System.Drawing.Point(1011, 220);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(179, 24);
+            this.button3.Size = new System.Drawing.Size(168, 31);
             this.button3.TabIndex = 42;
             this.button3.Text = "&Confirmar Venta";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnProductoNuevo
             // 
             this.btnProductoNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductoNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductoNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductoNuevo.Image = global::CapaPresentacion.Properties.Resources.productoNuevo;
             this.btnProductoNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductoNuevo.Location = new System.Drawing.Point(632, 148);
+            this.btnProductoNuevo.Location = new System.Drawing.Point(621, 145);
             this.btnProductoNuevo.Name = "btnProductoNuevo";
-            this.btnProductoNuevo.Size = new System.Drawing.Size(179, 24);
+            this.btnProductoNuevo.Size = new System.Drawing.Size(161, 31);
             this.btnProductoNuevo.TabIndex = 41;
             this.btnProductoNuevo.Text = "&Producto Nuevo";
             this.btnProductoNuevo.UseVisualStyleBackColor = true;
@@ -354,7 +432,6 @@
             this.IdD.HeaderText = "IdV";
             this.IdD.Name = "IdD";
             this.IdD.ReadOnly = true;
-            this.IdD.Visible = false;
             this.IdD.Width = 30;
             // 
             // dataGridViewTextBoxColumn1
@@ -369,7 +446,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "D  E  S  C  R  I  P  C  I  Ó  N";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 625;
+            this.dataGridViewTextBoxColumn2.Width = 620;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -395,7 +472,6 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             this.Column5.Visible = false;
-            this.Column5.Width = 30;
             // 
             // Column6
             // 
@@ -407,12 +483,12 @@
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::CapaPresentacion.Properties.Resources.carrito;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(438, 147);
+            this.button2.Location = new System.Drawing.Point(428, 145);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(179, 24);
+            this.button2.Size = new System.Drawing.Size(187, 31);
             this.button2.TabIndex = 38;
             this.button2.Text = "&Agregar al carrito";
             this.button2.UseVisualStyleBackColor = true;
@@ -433,7 +509,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Baskerville Old Face", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(177, 151);
+            this.label3.Location = new System.Drawing.Point(149, 151);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 14);
             this.label3.TabIndex = 30;
@@ -442,7 +518,7 @@
             // txtCantidadProducto
             // 
             this.txtCantidadProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCantidadProducto.Location = new System.Drawing.Point(306, 149);
+            this.txtCantidadProducto.Location = new System.Drawing.Point(278, 149);
             this.txtCantidadProducto.Name = "txtCantidadProducto";
             this.txtCantidadProducto.Size = new System.Drawing.Size(104, 20);
             this.txtCantidadProducto.TabIndex = 31;
@@ -508,6 +584,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Teal;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.lblRadioButons);
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.lblHabilitado);
             this.panel3.Controls.Add(this.txtBuscarApellido);
@@ -522,6 +599,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1221, 108);
             this.panel3.TabIndex = 2;
+            // 
+            // lblRadioButons
+            // 
+            this.lblRadioButons.AutoSize = true;
+            this.lblRadioButons.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRadioButons.ForeColor = System.Drawing.Color.Red;
+            this.lblRadioButons.Location = new System.Drawing.Point(489, 30);
+            this.lblRadioButons.Name = "lblRadioButons";
+            this.lblRadioButons.Size = new System.Drawing.Size(76, 25);
+            this.lblRadioButons.TabIndex = 8;
+            this.lblRadioButons.Text = "label7";
             // 
             // button4
             // 
@@ -543,7 +631,7 @@
             this.lblHabilitado.AutoSize = true;
             this.lblHabilitado.BackColor = System.Drawing.Color.Yellow;
             this.lblHabilitado.Font = new System.Drawing.Font("Cooper Black", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHabilitado.Location = new System.Drawing.Point(3, 53);
+            this.lblHabilitado.Location = new System.Drawing.Point(8, 53);
             this.lblHabilitado.Name = "lblHabilitado";
             this.lblHabilitado.Size = new System.Drawing.Size(198, 55);
             this.lblHabilitado.TabIndex = 6;
@@ -565,11 +653,20 @@
             this.btnBusarCliente.UseVisualStyleBackColor = false;
             this.btnBusarCliente.Click += new System.EventHandler(this.btnBusarCliente_Click);
             // 
+            // txtFechaVencimiento
+            // 
+            this.txtFechaVencimiento.BackColor = System.Drawing.Color.White;
+            this.txtFechaVencimiento.Location = new System.Drawing.Point(908, 54);
+            this.txtFechaVencimiento.Name = "txtFechaVencimiento";
+            this.txtFechaVencimiento.Size = new System.Drawing.Size(113, 20);
+            this.txtFechaVencimiento.TabIndex = 45;
+            // 
             // FrmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1261, 678);
+            this.Controls.Add(this.txtFechaVencimiento);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -577,7 +674,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FrmVenta";
-            this.Text = "FrmPrincipal";
+            this.Text = "Formulario Ventas";
             this.Load += new System.EventHandler(this.FrmVenta_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -586,11 +683,14 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataVentas)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -630,6 +730,13 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.RadioButton rbnCtaCte;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.TextBox txtFechaVencimiento;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnEliminarItem;
+        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdD;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -637,6 +744,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblRadioButons;
     }
 }

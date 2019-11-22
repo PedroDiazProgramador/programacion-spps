@@ -54,6 +54,7 @@
     <Compile Include="DLocalidad.cs" />
     <Compile Include="DMarca.cs" />
     <Compile Include="DMateria_Prima.cs" />
+    <Compile Include="DMovimiento_stock.cs" />
     <Compile Include="DPagos.cs" />
     <Compile Include="DPedido_Insumo.cs" />
     <Compile Include="DPedido_Presupuesto.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="DTipo_Factura.cs" />
     <Compile Include="DTipo_Pago.cs" />
     <Compile Include="DUnidad_Medida.cs" />
+    <Compile Include="DVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

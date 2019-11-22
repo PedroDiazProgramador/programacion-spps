@@ -49,6 +49,12 @@
     <Compile Include="FrmCliente.Designer.cs">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVenta.resx">
       <DependentUpon>FrmVenta.cs</DependentUpon>
@@ -128,6 +137,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\clienteNuevo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar_venta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar_item.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrito_compras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proveedores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportes1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ventas1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\talleres2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar_sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar_sesion1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mantenimiento.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

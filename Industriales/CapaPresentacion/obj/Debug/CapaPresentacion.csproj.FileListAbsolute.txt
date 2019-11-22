@@ -100,3 +100,4 @@ D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\obj\Debug\CapaPre
 D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.Cache
 D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\obj\Debug\CapaPresentacion.dll
 D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+D:\GITHUB_2019\programacion-spps\Industriales\CapaPresentacion\obj\Debug\CapaPresentacion.FrmPrincipal.resources

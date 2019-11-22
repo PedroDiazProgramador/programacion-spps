@@ -14,12 +14,16 @@ namespace CapaPresentacion
 {//inicio capa
     public partial class FrmVenta : Form
     {//inicio clase
+
+        DDetalle Detalle = new DDetalle();
+        DFactura Factura = new DFactura();
+        Boolean HabilitadoControl;
         public FrmVenta()
         {
             InitializeComponent();
         }
 
-        private List<DDetalle> lst = new List<DDetalle>();
+        private List<DVentas> lst = new List<DVentas>();
 
         private void Buscar()
         {//inicio metodo Buscar
@@ -66,10 +70,12 @@ namespace CapaPresentacion
                 if (this.txtBuscarDni.Text != string.Empty)
                 {//inicio if buscar dni 
                     this.dataCliente.DataSource = NCliente.BuscarDni(Convert.ToInt32(this.txtBuscarDni.Text));
-                    BuscarClienteInhabilitado(Convert.ToBoolean(this.dataCliente.CurrentRow.Cells[8].Value.ToString()));
+                    //BuscarClienteInhabilitado(Convert.ToBoolean(this.dataCliente.CurrentRow.Cells[8].Value.ToString()));
                     int legajo = Convert.ToInt32(this.dataCliente.CurrentRow.Cells[2].Value.ToString());
                     Boolean habilitado = Convert.ToBoolean(this.dataCliente.CurrentRow.Cells[8].Value.ToString());
+                    HabilitadoControl = Convert.ToBoolean(this.dataCliente.CurrentRow.Cells[8].Value.ToString());
                     this.lblCliente.Text = Convert.ToString(this.dataCliente.CurrentRow.Cells["apellido"].Value) + " " + Convert.ToString(this.dataCliente.CurrentRow.Cells["nombre"].Value);
+                    this.rbnContado.Checked = true;
                     this.txtIdentificador.Text = Convert.ToString(this.dataCliente.CurrentRow.Cells["id_cliente"].Value);
                     this.dataCliente.Columns[0].Visible = false;
                     this.dataCliente.Columns[1].Visible = false;
@@ -139,7 +145,7 @@ namespace CapaPresentacion
             {
                 this.dataListadoProductos.DataSource = NProducto.Buscar(this.txtBuscarProductos.Text);
                 this.lblStock.Text = "Stock: " + Convert.ToString(this.dataListadoProductos.CurrentRow.Cells["stock"].Value);
-                this.dataListadoProductos.Columns[0].Visible = false;
+                //this.dataListadoProductos.Columns[0].Visible = false;
                 this.dataListadoProductos.Columns[1].Visible = false;
                 this.dataListadoProductos.Columns[6].Visible = false;
                 this.dataListadoProductos.Columns[8].Visible = false;
@@ -156,8 +162,10 @@ namespace CapaPresentacion
         {//inicio metdo cargar ventas
          //CAPTURAMOS VALOR DE LA FILA SELECCIONADA DG FORM2
             DFactura V = new DFactura();
-            DDetalle Detalle = new DDetalle();
+            DVentas Ventas = new DVentas();
+            DDetalle Detalle1 = new DDetalle();
             decimal Subtotal = 0;
+            
             //dataVentas.Rows.Add(A, B, C, D, E);
             //foreach (DataGridViewRow fila in this.dataListadoProductos.Rows)
             //{
@@ -182,11 +190,12 @@ namespace CapaPresentacion
             //V.Fecha_venta = Convert.ToDateTime(this.dtpFechaVenta.Value);
 
             //Detalle.Id_producto = Convert.ToInt32(this.dataListadoProductos.CurrentRow.Cells[5].Value.ToString());
-            Detalle.Precio_producto = Convert.ToDecimal(this.dataListadoProductos.CurrentRow.Cells[4].Value.ToString());
-            Detalle.Descripcion_producto = Convert.ToString(this.dataListadoProductos.CurrentRow.Cells[2].Value.ToString());
-            Detalle.Cantidad_producto = Convert.ToInt32(this.txtCantidadProducto.Text);
-            Detalle.Id_producto = Convert.ToInt32(this.lblNumeroFactura.Text);
-            lst.Add(Detalle);
+            Ventas.Id_producto = Convert.ToInt32(this.dataListadoProductos.CurrentRow.Cells[0].Value.ToString());
+            Ventas.Precio_producto = Convert.ToDecimal(this.dataListadoProductos.CurrentRow.Cells[4].Value.ToString());
+            Ventas.Descripcion_producto = Convert.ToString(this.dataListadoProductos.CurrentRow.Cells[2].Value.ToString());
+            Ventas.Cantidad_producto = Convert.ToInt32(this.txtCantidadProducto.Text);
+            Ventas.Id_factura = Convert.ToInt32(this.lblNumeroFactura.Text);
+            lst.Add(Ventas);
             LlenarGrilla();
 
             //Detalle.Id_producto = Convert.ToInt32(A);
@@ -231,13 +240,16 @@ namespace CapaPresentacion
                 //dataVentas.Rows[i].Cells[4].Value = lst[i].Id_factura;
                 //dataVentas.Rows[i].Cells[5].Value = lst[i].Id_cliente;
                 //dataVentas.Rows[i].Cells[6].Value = lst[i].Fecha_venta;
-                //dataVentas.Rows[i].Cells[0].Value = lst[i].Id_producto;
+                dataVentas.Rows[i].Cells[0].Value = lst[i].Id_producto;
+                //MessageBox.Show("else id del producto es:  " + dataVentas.Rows[i].Cells[0].Value);
                 dataVentas.Rows[i].Cells[1].Value = lst[i].Cantidad_producto;
                 //SumaIgv = Convert.ToDecimal(dataVentas1.Rows[i].Cells[1].Value);
                 dataVentas.Rows[i].Cells[2].Value = lst[i].Descripcion_producto;
                 dataVentas.Rows[i].Cells[3].Value = lst[i].Precio_producto;
+                dataVentas.Rows[i].Cells[5].Value = lst[i].Id_producto;
                 Subtotal = Convert.ToDecimal(dataVentas.Rows[i].Cells[3].Value = lst[i].Precio_producto) * Convert.ToInt32(lst[i].Cantidad_producto);
                 dataVentas.Rows[i].Cells[4].Value = Subtotal;
+                
                 
 
 
@@ -246,7 +258,7 @@ namespace CapaPresentacion
                 //MessageBox.Show("La cantidad de elementos de la lista:" + contador);
                 //MessageBox.Show("el PrecioProducto es" + SumaIgv);
                 SumaSubTotal += Convert.ToDecimal(dataVentas.Rows[i].Cells[4].Value);
-                MessageBox.Show("El Subtotal es: " + SumaSubTotal);
+                //MessageBox.Show("El Subtotal es: " + SumaSubTotal);
                 //SumaTotal += Convert.ToDecimal(dataVentas.Rows[i].Cells[4].Value);
                 //SumaIva += Convert.ToDecimal(dataVentas.Rows[i].Cells[3].Value);
                 //Console.ReadKey();
@@ -264,7 +276,8 @@ namespace CapaPresentacion
             SumaTotal += SumaSubTotal;
             dataVentas.Rows[lst.Count + 1].Cells[4].Value = SumaTotal;
             dataVentas.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
-            this.lblTotal.Text = "Total:" + "$" + Convert.ToString(SumaTotal);
+            this.lblTotal.Visible = true;
+            this.lblTotal.Text = Convert.ToString(SumaTotal);
             //dataVentas.Rows[lst.Count + 3].Cells[4].Value = "SumaTotal";
             dataVentas.ClearSelection();
 
@@ -298,8 +311,11 @@ namespace CapaPresentacion
         private void dataCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             MessageBox.Show("Mostrar cliente");
-            BuscarClienteInhabilitado(Convert.ToBoolean(this.dataCliente.CurrentRow.Cells[8].Value.ToString()));
+            //BuscarClienteInhabilitado(Convert.ToBoolean(this.dataCliente.CurrentRow.Cells[8].Value.ToString()));
             this.lblCliente.Text = Convert.ToString(this.dataCliente.CurrentRow.Cells["apellido"].Value) + " " + Convert.ToString(this.dataCliente.CurrentRow.Cells["nombre"].Value);
+            HabilitadoControl = Convert.ToBoolean(this.dataCliente.CurrentRow.Cells[8].Value.ToString());
+            this.rbnContado.Checked = true;
+            //BuscarClienteInhabilitado(HabilitadoControl);
             this.txtIdentificador.Text = Convert.ToString(this.dataCliente.CurrentRow.Cells["id_cliente"].Value);
         }
 
@@ -412,14 +428,172 @@ namespace CapaPresentacion
 
         private void rbnCtaCte_CheckedChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("Estoy haciendo click en el radio butons");
-            if (this.rbnCtaCte.Enabled == true)
-            {
-                if (this.txtIdentificador.Text != string.Empty)
+            //MessageBox.Show("Estoy haciendo click en el radio butons");
+            //if (this.rbnCtaCte.Enabled == true)
+            //{
+            //    if (this.txtIdentificador.Text != string.Empty)
+            //    {
+            //        MessageBox.Show("Debe seleccionar primero el cliente");
+            //        this.rbnContado.Enabled = true;
+            //    }
+            //}
+            if (rbnCtaCte.Checked)
+            {//inicio rbnCtaCte
+                MessageBox.Show("Cuenta Corriente activado");
+                if (txtIdentificador.Text != string.Empty)
                 {
-                    MessageBox.Show("Debe seleccionar primero el cliente");
-                    this.rbnContado.Enabled = true;
+                        //Boolean HabilitadoControl = Convert.ToBoolean(this.dataCliente.CurrentRow.Cells[8].Value.ToString());
+                    
+                        if (HabilitadoControl != true)
+                        {
+                            MessageBox.Show("Cliente no habilitado para comprar con Cuenta Corriente" + "" + HabilitadoControl);
+                            BuscarClienteInhabilitado(HabilitadoControl);
+                            this.rbnContado.Checked = true;
+                        }
+                                          
                 }
+                else
+                {
+                    MessageBox.Show("identificador no esta activado");
+                }
+            }//fin rbnCtaCte
+            this.lblRadioButons.Text = rbnCtaCte.Text;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {//inicio boton confirmar venta
+            string rpta = "";
+            string rptaFactura = "";
+            if (dataVentas.Rows.Count > 0)
+            {
+
+                for (int i = 0; i < dataVentas.Rows.Count; i++)
+                {
+                    Decimal SumaIgv = 0; Decimal SumaSubTotal = 0;
+                    if (Convert.ToString(dataVentas.Rows[i].Cells[2].Value) != "")
+                    {
+                        //SumaIgv += Convert.ToDecimal(dataVentas.Rows[i].Cells[6].Value);
+                        //SumaSubTotal += Convert.ToDecimal(dataVentas.Rows[i].Cells[4].Value);
+                        //GuardarDetalleVenta(
+                        //Convert.ToInt32(lblNumeroFactura.Text),
+                        //Convert.ToInt32(dataListadoProductos.Rows[i].Cells[0].Value),
+                        //Convert.ToDecimal(dataListadoProductos.Rows[i].Cells[4].Value),
+                        //Convert.ToInt32(txtCantidadProducto),
+                        //Convert.ToString(dataListadoProductos.Rows[i].Cells[2].Value)
+                        //);
+                        rpta = NDetalle.Insertar(500, Convert.ToInt32(lblNumeroFactura.Text), Convert.ToInt32(dataVentas.Rows[i].Cells[0].Value), Convert.ToDecimal(dataVentas.Rows[i].Cells[3].Value), Convert.ToInt32(dataVentas.Rows[i].Cells[1].Value));
+                        //MessageBox.Show("Contiene Datos." + rpta +  "Precio: " + dataVentas.Rows[i].Cells[3].Value + "Cantidad de productos:" + dataVentas.Rows[i].Cells[1].Value);
+
+                        if (rpta.Equals("OK"))
+                        {//inicio if rpta
+
+                            //MessageBox.Show("Se insertó correctamente el registro.");
+
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("No se cargó la venta de los productos, pongase en contacto con el Adminisrador de base de datos de Procesamiento de Datos.");
+                        }
+
+                    }
+
+                   
+                }
+
+                rptaFactura = NFactura.Insertar(500, Convert.ToInt32(this.txtIdentificador.Text), "12/10/2005", Convert.ToDecimal(this.lblTotal.Text), Convert.ToInt32(this.lblNumeroFactura.Text), 1, 1, 1, 1);
+                if (rptaFactura.Equals("OK"))
+                {
+                    MessageBox.Show("Se realizó correctamente la venta.");
+                    LimpiarVenta();
+                }
+
+                else
+                {
+                    MessageBox.Show("No se cargó la venta, pongase en contacto con el Administrador de base de datos de Procesamiento de Datos.");
+                }
+
+            }
+
+        }//fin boton confirmar venta
+
+        private void LimpiarVenta()
+        {
+           // dataCliente.Rows.Clear();
+            lblCliente.Text = string.Empty;
+            txtBuscarDni.Clear();
+            txtBuscarApellido.Clear();
+            txtCantidadProducto.Clear();
+            txtIdentificador.Clear();
+            lblTotal.Text = string.Empty;
+            txtBuscarProductos.Clear();
+            dataVentas.Rows.Clear();
+            rbnContado.Checked = true;
+            //dataListadoProductos.Rows.Clear();
+            this.lst.Clear();
+            //txtIgv.Clear();
+            //txtDocIdentidad.Clear();
+            //txtDatos.Clear();
+            //dataGridView1.Rows.Clear();
+            //Program.IdEmpleadoLogueado = 0;
+            //Program.IdCliente = 0;
+            //txtIdProducto.Clear();
+            //rbnBoleta.Checked = true;
+            //Program.DocumentoIdentidad = "";
+            //Program.ApellidosCliente = "";
+            //Program.NombreCliente = "";
+        }
+
+         private void GuardarVenta(int pid_cliente, string pfecha_venta, decimal pcosto_total, int pnumero_factura, int pcomprobante_exposicion, int pid_tipo_pago, int pemite_factura, int ptipo_factura)
+        {
+           
+            
+        }
+
+        private void btnEliminarItem_Click(object sender, EventArgs e)
+        {
+            if (dataVentas.Rows.Count > 0)
+            {
+                if (dataVentas.Rows[dataVentas.CurrentRow.Index].Selected == true)
+                {
+                    if (Convert.ToString(dataVentas.CurrentRow.Cells[2].Value) != "")
+                    {
+                        dataVentas.Rows.RemoveAt(dataVentas.CurrentRow.Index);
+                        lst.RemoveAt(dataVentas.CurrentRow.Index);
+                        LlenarGrilla();
+                        //DevComponents.DotNetBar.MessageBoxEx.Show("Producto Eliminado de la Lista Ok.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Producto Eliminado de la Lista Ok.", "Sistema de Ventas Industriales SPPS.");
+                    }
+                    else
+                    {
+                        //DevComponents.DotNetBar.MessageBoxEx.Show("No Existe Ningun Elemento en la Lista.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No Existe Ningun Elemento en la Lista.", "Sistema de Ventas Industriales SPPS.");
+                        dataVentas.ClearSelection();
+                    }
+                }
+                else
+                {
+                    //DevComponents.DotNetBar.MessageBoxEx.Show("Por Favor Seleccione Item a Eliminar de la Lista.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Por Favor Seleccione Item a Eliminar de la Lista.", "Sistema de Ventas Industriales SPPS.");
+                }
+            }
+            else
+            {
+                //DevComponents.DotNetBar.MessageBoxEx.Show("No Existe Ningun Elemento en la Lista", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No Existe Ningun Elemento en la Lista", "Sistema de Ventas Industriales SPPS.");
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            LimpiarVenta();
+        }
+
+        private void rbnCtaCte_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (this.txtIdentificador.Text != string.Empty)
+            {
+                MessageBox.Show("Presionó el radio buttons");
             }
         }
     }//fin clase

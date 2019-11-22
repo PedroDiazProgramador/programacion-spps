@@ -307,6 +307,7 @@ namespace CapaDatos
             this.Fecha_compra = fecha_compra;
             this.Cupo_compra = cupo_compra; 
         }
+
         #endregion Constructores
 
         #region Metodos        
@@ -367,7 +368,7 @@ namespace CapaDatos
                 SqlCmd.Parameters.Add(ParTelefono);
 
                 SqlParameter ParDireccion = new SqlParameter();
-                ParDireccion.ParameterName = "@direcion";
+                ParDireccion.ParameterName = "@direccion";
                 ParDireccion.SqlDbType = SqlDbType.VarChar;
                 ParDireccion.Size = (100);
                 ParDireccion.Value = Cliente.Direccion;
@@ -388,7 +389,8 @@ namespace CapaDatos
 
                 SqlParameter ParFecha_Nacimiento = new SqlParameter();
                 ParFecha_Nacimiento.ParameterName = "@fecha_nac";
-                ParFecha_Nacimiento.SqlDbType = SqlDbType.DateTime;
+                ParFecha_Nacimiento.SqlDbType = SqlDbType.VarChar;
+                ParFecha_Nacimiento.Size = 50;
                 ParFecha_Nacimiento.Value = Cliente.Fecha_nac;
                 SqlCmd.Parameters.Add(ParFecha_Nacimiento);
 
@@ -410,11 +412,11 @@ namespace CapaDatos
                 ParCuenta_Bancaria.Value = Cliente.Cuenta_bancaria;
                 SqlCmd.Parameters.Add(ParCuenta_Bancaria);
 
-                SqlParameter ParFoto = new SqlParameter();
-                ParFoto.ParameterName = "@foto";
-                ParFoto.SqlDbType = SqlDbType.Image;
-                ParFoto.Value = Cliente.Foto;
-                SqlCmd.Parameters.Add(ParFoto);
+                //SqlParameter ParFoto = new SqlParameter();
+                //ParFoto.ParameterName = "@foto";
+                //ParFoto.SqlDbType = SqlDbType.Image;
+                //ParFoto.Value = Cliente.Foto;
+                //SqlCmd.Parameters.Add(ParFoto);
 
                 SqlParameter ParId_Tipo_Cliente = new SqlParameter();
                 ParId_Tipo_Cliente.ParameterName = "@id_tipo_cliente";
@@ -430,15 +432,16 @@ namespace CapaDatos
 
                 SqlParameter ParFecha_Compra = new SqlParameter();
                 ParFecha_Compra.ParameterName = "@fecha_compra";
-                ParFecha_Compra.SqlDbType = SqlDbType.DateTime;
+                ParFecha_Compra.SqlDbType = SqlDbType.VarChar;
+                ParFecha_Compra.Size = 50;
                 ParFecha_Compra.Value = Cliente.Fecha_nac;
-                SqlCmd.Parameters.Add(ParFecha_Nacimiento);
+                SqlCmd.Parameters.Add(ParFecha_Compra);
 
                 SqlParameter ParCupo_Compra = new SqlParameter();
                 ParCupo_Compra.ParameterName = "@cupo_compra";
                 ParCupo_Compra.SqlDbType = SqlDbType.Int;
-                ParCupo_Compra.Value = Cliente.Id_sexo;
-                SqlCmd.Parameters.Add(ParId_Sexo);
+                ParCupo_Compra.Value = Cliente.Cupo_compra;
+                SqlCmd.Parameters.Add(ParCupo_Compra);
 
                 //ejecutar el codigo
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "EL REGISTRO NO HA SIDO AGREGADO";

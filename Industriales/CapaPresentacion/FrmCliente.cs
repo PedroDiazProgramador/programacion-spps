@@ -22,8 +22,9 @@ namespace CapaPresentacion
             InitializeComponent();
 
             //this.ttMensaje.SetToolTip(this.txtDni, "Ingrese el DNI del Cliente");
-
-            //this.LlenarComboSexo();
+            this.LlenarComboTipoCliente();
+            this.LlenarComboSexo();
+            this.LlenarComboLocalidad();
             //this.LlenarComboTipoCliente();
             //this.LlenarComboHabilitados();
             //this.LlenarComboProvincia();
@@ -150,71 +151,48 @@ namespace CapaPresentacion
             this.txtDni.Focus();
         }
 
+        //metodos llenar combobox
+        private void LlenarComboTipoCliente()
+        {
+            this.cmbTipoCliente.DataSource = NTipo_Cliente.Mostrar();
+            this.cmbTipoCliente.ValueMember = "id_tipo_cliente";
+            this.cmbTipoCliente.DisplayMember = "tipo_cliente";
+            this.cmbTipoCliente.SelectedIndex = 1;
+        }
+
+        private void LlenarComboSexo()
+        {
+            this.cmbSexo.DataSource = NSexo.Mostrar();
+            this.cmbSexo.ValueMember = "id_sexo";
+            this.cmbSexo.DisplayMember = "sexo";
+            this.cmbSexo.SelectedIndex = 1;
+        }
+
+        private void LlenarComboLocalidad()
+        {
+            this.cmbLocalidad.DataSource = NLocalidad.Mostrar();
+            this.cmbLocalidad.ValueMember = "id_localidad";
+            this.cmbLocalidad.DisplayMember = "localidad";
+            this.cmbLocalidad.SelectedIndex = 1;
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {//inicio boton guardar de clientes
-            try
-            {//inicio try
-                string rpta = "";
-                if (this.txtDni.Text != string.Empty)
-                {//inicio if 
-                    //MensajeError("Falta ingresar algunos datos, serán recargados");
-                    //errorIcono.SetError(txtDescripcion, "Ingrese la denoinacion del producto");
-                }//fin if
-                else
-                {//inicio else
-                    decimal valor_Decimal = 0;
+            string rpta = "";
 
-                    if (this.isNuevo)
-                    {//inicio if
-                        MessageBox.Show("Estoy entrando por el metodo INSERTAR");
-                        //rpta = NProducto.Insertar(5001, 2005, "Producto de prueba", 15, 2,
-                        //  150, 5, "18/10/2005", 1, 1);
-                        MessageBox.Show("Estoy entrando por el metodo INSERTAR");
-                        //rpta = NProducto.Insertar(5000, Convert.ToInt32(this.txtCodigoBarra.Text), this.txtDescripcion.Text.Trim().ToUpper(), Convert.ToDecimal(this.txtPrecioKilo.Text), Convert.ToDecimal(this.txtPrecioUnidad.Text),
-                        //  Convert.ToInt32(this.txtStock.Text), Convert.ToInt32(this.txtStockMinimo.Text), this.txtFechaVencimiento.Text, Convert.ToInt32(this.cmbTaller.SelectedValue), Convert.ToInt32(this.txtMateriaPrrima.Text));
+            //rpta = NCliente.Insertar(5000, Convert.ToInt32(this.txtDni.Text), Convert.ToInt32(this.txtLegajo.Text), this.txtApellido.Text.Trim().ToUpper(), this.txtNombre.Text.Trim().ToUpper(), this.txtTelefono.Text.Trim().ToUpper(), this.txtDireccion.Text.Trim().ToUpper(), this.txtEmail.Text.Trim().ToUpper(),
+            //Convert.ToInt32(1), this.txtFechaNacimiento.Text, 6, Convert.ToInt32(this.txtMontoAlcance.Text), Convert.ToInt32(this.txtCuenta_Bancaria.Text), null, 1, 1, "12/10/2008", 200);
+            rpta = NCliente.Insertar(5000, Convert.ToInt32(this.txtDni.Text), Convert.ToInt32(this.txtLegajo.Text), this.txtApellido.Text.Trim().ToUpper(), this.txtNombre.Text.Trim().ToUpper(), this.txtTelefono.Text.Trim().ToUpper(), this.txtDireccion.Text.Trim().ToUpper(), this.txtEmail.Text.Trim().ToUpper(), 1, "06/11/19", 1, 2342, 23423432, 1, 1, "12/10/1918", 200);
 
-                        rpta = NCliente.Insertar(5000, Convert.ToInt32(this.txtDni.Text), Convert.ToInt32(this.txtLegajo.Text), this.txtApellido.Text.Trim().ToUpper(), this.txtNombre.Text.Trim().ToUpper(), this.txtTelefono.Text.Trim().ToUpper(), this.txtDireccion.Text.Trim().ToUpper(), this.txtEmail.Text.Trim().ToUpper(),
-                          Convert.ToInt32(this.cmbHabilitado.Text),this.txtFechaNacimiento.Text, 6, Convert.ToInt32(this.txtMontoAlcance.Text), Convert.ToInt32(this.txtCuenta_Bancaria.Text),null, 1, 1, "12/10/2008", 200);
+            if (rpta == "OK")
+            {
+                MessageBox.Show("Se insertocorresctamente el registro");
+            }
+            else
+            {
+                MessageBox.Show("No se inserto el registro" + rpta);
+            }
 
-                    }//fin if
-                    else
-                    {//inicio else
-                        MessageBox.Show("Estoy entrando por el metodo EDITAR");
-                        rpta = NCliente.Editar(5000, Convert.ToInt32(this.txtDni.Text), Convert.ToInt32(this.txtLegajo.Text), this.txtApellido.Text.Trim().ToUpper(), this.txtNombre.Text.Trim().ToUpper(), this.txtTelefono.Text.Trim().ToUpper(), this.txtDireccion.Text.Trim().ToUpper(), this.txtEmail.Text.Trim().ToUpper(),
-                          Convert.ToInt32(this.cmbHabilitado.Text), this.txtFechaNacimiento.Text, 6, Convert.ToInt32(this.txtMontoAlcance.Text), Convert.ToInt32(this.txtCuenta_Bancaria.Text), null, 1, 1, "12/10/2008", 200);
-
-                    }//fin else
-
-                    if (rpta.Equals("OK"))
-                    {//inicio if rpta
-                        if (this.isNuevo)
-                        {//inicio if IsNuevo
-                            this.MensajeOk("Se insertó correctamnte el Registro");
-                        }//fin if IsNuevo
-
-                        else
-                        {//inicio else IsNuevo
-                            this.MensajeOk("Se actualizó correctamnte el Registro");
-                        }//Fin else IsNuevo
-                    }//fin rpta
-                    else
-                    {//inicio else rpta
-                        this.MensajeError("Se introdujo un número de dni o legajo duplicado a continuación se muestra el número duplicado: " + rpta);
-                    }//fin else rpta
-
-                    this.isNuevo = false;
-                    this.isEditar = false;
-                    this.Botones();
-                    this.Limpiar();
-                    this.Mostrar();
-                }//fin else
-
-            }//fin try
-            catch (Exception ex)
-            {//inicio catch
-                MessageBox.Show(ex.Message, ex.StackTrace);
-                MessageBox.Show("El error esta por esta salida");
-            }//fin catch
 
         }//fin boton guardar clientes
     }//fin clase formulario

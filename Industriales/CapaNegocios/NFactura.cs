@@ -11,7 +11,7 @@ namespace CapaNegocios
     public class NFactura
     {//inicio de clase
      //metodo insertar
-        public static string Insertar(int id_factura, int id_cliente, string fecha_venta, decimal costo_total, int numero_factura, int comprobante_exposicion, int id_tipo_pago, int emite_factura, int tipo_factura)
+        public static string Insertar(int id_factura, int id_cliente, string fecha_venta,  decimal costo_total, int numero_factura, int comprobante_exposicion, int id_tipo_pago, int emite_factura, int tipo_factura)
         {
             DFactura Obj = new DFactura();
             Obj.Id_factura = id_factura;
@@ -24,9 +24,9 @@ namespace CapaNegocios
                 }
                 catch (Exception)
                 {
-
+            
                     Obj.Fecha_venta = System.DateTime.Parse("1900-01-01");
-
+            
                 }
             }
             else

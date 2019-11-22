@@ -238,7 +238,7 @@ namespace CapaPresentacion
                         //  150, 5, "18/10/2005", 1, 1);
                         MessageBox.Show("Estoy entrando por el metodo INSERTAR");
                         rpta = NProducto.Insertar(5000, Convert.ToInt32(this.txtCodigoBarra.Text), this.txtDescripcion.Text.Trim().ToUpper(), Convert.ToDecimal(this.txtPrecioKilo.Text), Convert.ToDecimal(this.txtPrecioUnidad.Text),
-                          Convert.ToInt32(this.txtStock.Text), Convert.ToInt32(this.txtStockMinimo.Text), this.txtFechaVencimiento.Text, Convert.ToInt32(this.cmbTaller.SelectedValue), Convert.ToInt32(this.txtMateriaPrrima.Text));
+                          Convert.ToInt32(this.txtStock.Text), Convert.ToInt32(this.txtStockMinimo.Text), "12/10/2005", Convert.ToInt32(this.cmbTaller.SelectedValue), Convert.ToInt32(this.txtMateriaPrrima.Text));
 
 
 

@@ -190,7 +190,8 @@ namespace CapaDatos
 
                 SqlParameter ParFecha_Venta = new SqlParameter();
                 ParFecha_Venta.ParameterName = "@fecha_venta";
-                ParFecha_Venta.SqlDbType = SqlDbType.DateTime;
+                ParFecha_Venta.SqlDbType = SqlDbType.VarChar;
+                ParFecha_Venta.Size = 50;
                 ParFecha_Venta.Value = Factura.Fecha_venta;
                 SqlCmd.Parameters.Add(ParFecha_Venta);
 

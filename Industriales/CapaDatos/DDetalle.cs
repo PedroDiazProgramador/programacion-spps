@@ -15,7 +15,6 @@ namespace CapaDatos
         private int _Id_producto;
         private decimal _Precio_producto;
         private int _Cantidad_producto;
-        private string _Descripcion_producto;
         #region Propiedades
         public int Id_detalle
         {
@@ -82,18 +81,6 @@ namespace CapaDatos
             }
         }
 
-        public string Descripcion_producto
-        {
-            get
-            {
-                return _Descripcion_producto;
-            }
-
-            set
-            {
-                _Descripcion_producto = value;
-            }
-        }
         #endregion Propiedades
 
         #region Constructores
@@ -102,14 +89,13 @@ namespace CapaDatos
 
         }
 
-        public DDetalle(int id_detalle, int id_factura, int id_producto, decimal precio_producto, int cantidad_producto, string descripcion_producto)
+        public DDetalle(int id_detalle, int id_factura, int id_producto, decimal precio_producto, int cantidad_producto)
         {
             this.Id_detalle = id_detalle;
             this.Id_factura = id_factura;
             this.Id_producto = id_producto;
             this.Precio_producto = precio_producto;
             this.Cantidad_producto = cantidad_producto;
-            this.Descripcion_producto = descripcion_producto;
         }
         #endregion Constructores
 
@@ -161,12 +147,6 @@ namespace CapaDatos
                 ParCantidad_Producto.Value = Detalle.Cantidad_producto;
                 SqlCmd.Parameters.Add(ParCantidad_Producto);
 
-                SqlParameter ParDescripcion_Producto = new SqlParameter();
-                ParDescripcion_Producto.ParameterName = "@descripcion_producto";
-                ParDescripcion_Producto.SqlDbType = SqlDbType.VarChar;
-                ParDescripcion_Producto.Size = 255;
-                ParDescripcion_Producto.Value = Detalle.Descripcion_producto;
-                SqlCmd.Parameters.Add(ParDescripcion_Producto);
 
                 //ejecutar el codigo
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "EL REGISTRO NO HA SIDO AGREGADO";
@@ -237,14 +217,7 @@ namespace CapaDatos
                 ParCantidad_Producto.Value = Detalle.Cantidad_producto;
                 SqlCmd.Parameters.Add(ParCantidad_Producto);
 
-                SqlParameter ParDescripcion_Producto = new SqlParameter();
-                ParDescripcion_Producto.ParameterName = "@descripcion_producto";
-                ParDescripcion_Producto.SqlDbType = SqlDbType.VarChar;
-                ParDescripcion_Producto.Size = 255;
-                ParDescripcion_Producto.Value = Detalle.Descripcion_producto;
-                SqlCmd.Parameters.Add(ParDescripcion_Producto);
-
-
+                
                 //ejecutar el codigo
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "HA FALLADO LA EDICION DEL REGISTRO";
 

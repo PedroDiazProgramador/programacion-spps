@@ -215,6 +215,7 @@ namespace CapaDatos
                 SqlCmd.Connection = SqlCon;
                 SqlCmd.CommandType = CommandType.StoredProcedure;
                 SqlCmd.CommandText = "spmostrar_tipo_cliente";
+                //spmostrar_tipo_cliente
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(DtResultado);

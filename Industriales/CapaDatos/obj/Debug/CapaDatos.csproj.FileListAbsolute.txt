@@ -35,3 +35,9 @@ D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\CapaDatos\bin\Debug
 D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
 D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\CapaDatos\obj\Debug\CapaDatos.dll
 D:\Programar\Proyectos-GitHub\programacion-spps\Industriales\CapaDatos\obj\Debug\CapaDatos.pdb
+D:\GITHUB_2019\programacion-spps\Industriales\CapaDatos\bin\Debug\CapaDatos.dll.config
+D:\GITHUB_2019\programacion-spps\Industriales\CapaDatos\bin\Debug\CapaDatos.dll
+D:\GITHUB_2019\programacion-spps\Industriales\CapaDatos\bin\Debug\CapaDatos.pdb
+D:\GITHUB_2019\programacion-spps\Industriales\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
+D:\GITHUB_2019\programacion-spps\Industriales\CapaDatos\obj\Debug\CapaDatos.dll
+D:\GITHUB_2019\programacion-spps\Industriales\CapaDatos\obj\Debug\CapaDatos.pdb
